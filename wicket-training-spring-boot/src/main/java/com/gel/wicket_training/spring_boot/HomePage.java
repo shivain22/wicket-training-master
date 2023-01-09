@@ -8,7 +8,6 @@ import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 
 @WicketHomePage
 public class HomePage extends WebPage {
-	
 	public HomePage() {
 		Form form = new Form<Void>("form"){
 			@Override
@@ -17,15 +16,11 @@ public class HomePage extends WebPage {
 			}
 		};
 		queue(form);
-		
-		
 		add(new Link<Void>("mylink") {
-
 					@Override
 					public void onClick() {
 						setResponsePage(SecondPage.class);
 					}
-		        	
-		        });
+        });
 	}
 }
