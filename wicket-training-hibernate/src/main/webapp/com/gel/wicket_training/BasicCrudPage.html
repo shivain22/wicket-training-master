@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+</head>
+
+<body>
+
+	<wicket:extend>
+
+
+		<h4>List of Persons</h4>
+		
+		<form action="" wicket:id="addForm">
+<table border="1" class="formTable">
+				<thead>
+					<tr>
+						<td>First Name</td>
+						<td>Last Name</td>
+						<td>Mobile Numbers</td>
+						<td>Email</td>
+						<td>Addresses</td>
+						<td>Bank Accounts</td>
+						<td>Action</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="personList">
+						<td wicket:id="lblFirstName"></td>
+						<td wicket:id="lblLastName"></td>
+						<td>
+							<table class="formTable">
+								<tr wicket:id="mobileNumbers">
+									<td wicket:id="mobileNumber"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table class="formTable">
+								<tr wicket:id="emails">
+									<td wicket:id="email"></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table class="formTable">
+								<tr wicket:id="addresses">
+									<td><span wicket:id="address"></span></td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table class="formTable">
+								<tr wicket:id="bankAccounts">
+									<td><span wicket:id="bankAccount"></span></td>
+								</tr>
+							</table>
+						</td>
+						<td><a wicket:id="editLink">Edit</a> /<a
+							wicket:id="deleteLink">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+<br />
+			<table id="mainTable" class="formTable">
+				<tr>
+					<td colspan="2" align="center">Add new Person Data</td>
+				</tr>
+				<tr>
+					<td>First Name</td>
+					<td><input type="hidden" wicket:id="personId" /><input
+						wicket:id="firstName" /></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input wicket:id="lastName" /></td>
+				</tr>
+			</table>
+			<br />
+			<table id="mobileNumberTable" class="formTable">
+				<tr>
+					<td colspan="3" align="center">Add Mobile Numbers</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3"><input type="submit"
+						wicket:id="addMobileNumber" value="Click to Add New" /></td>
+				</tr>
+				<tr wicket:id="personMobileNumbers">
+					<td><input type="hidden" wicket:id="id" /><span
+						wicket:id="lblMobileNumber"></span></td>
+					<td><input type="text" wicket:id="mobileNumber" /></td>
+					<td><input type="submit" wicket:id="remove" value="Remove" /></td>
+				</tr>
+			</table>
+			<br />
+			<table id="emailTable" class="formTable">
+				<tr>
+					<td colspan="3" align="center">Add Emails</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3"><input type="submit"
+						wicket:id="addEmail" value="Click to Add New" /></td>
+				</tr>
+				<tr wicket:id="personEmails" class="formTables">
+					<td><input type="hidden" wicket:id="id" /><span
+						wicket:id="lblEmail"> </span></td>
+					<td><input type="text" wicket:id="email" /></td>
+					<td><input type="submit" wicket:id="remove" value="Remove" /></td>
+				</tr>
+			</table>
+
+			<br />
+			<table id="addressTable" class="formTable">
+				<tr>
+					<td align="center">Add Addresses</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3"><input type="submit"
+						wicket:id="addAddress" value="Click to Add New" /></td>
+				</tr>
+				<tr wicket:id="personAddresses">
+					<td>
+						<table id="addressInnerTable" class="formTable">
+							<tr>
+								<td><input type="hidden" wicket:id="id" /><span
+									wicket:id="lblAddressLine"> </span></td>
+								<td><input type="text" wicket:id="addressLine" /></td>
+								<td rowspan="5"><input type="submit" wicket:id="remove"
+									value="Remove" /></td>
+							</tr>
+							<tr>
+								<td><span wicket:id="lblCountry"> </span></td>
+								<td><input type="text" wicket:id="country" /></td>
+							</tr>
+							<tr>
+								<td><span wicket:id="lblState"> </span></td>
+								<td><input type="text" wicket:id="state" /></td>
+							</tr>
+							<tr>
+								<td><span wicket:id="lblCity"> </span></td>
+								<td><input type="text" wicket:id="city" /></td>
+							</tr>
+							<tr>
+								<td><span wicket:id="lblPin"> </span></td>
+								<td><input type="text" wicket:id="pin" /></td>
+							</tr>
+
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table class="formTable">
+				<tr>
+					<td align="center">Add Bank Account</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3"><input type="submit"
+						wicket:id="addBankAccount" value="Click to Add New" /></td>
+				</tr>
+				<tr wicket:id="personBankAccounts">
+					<td>
+						<table id="bankInnerTable" class="formTable">
+
+							<tr>
+								<td><input type="hidden" wicket:id="id" /><span
+									wicket:id="lblBankName"> </span></td>
+								<td><input type="text" wicket:id="bankName" /></td>
+								<td rowspan="2"><input type="submit" wicket:id="remove"
+									value="Remove" /></td>
+							</tr>
+							<tr>
+								<td><span wicket:id="lblAccountNumber"> </span></td>
+								<td><input type="text" wicket:id="accountNumber" /></td>
+							</tr>
+
+						</table>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table id="submitFormTable" class="formTable">
+				<tr>
+					<td align="center"><input type="submit"
+						value="Save Person with Details.." /></td>
+				</tr>
+			</table>
+		</form>
+	</wicket:extend>
+</body>
+</html>

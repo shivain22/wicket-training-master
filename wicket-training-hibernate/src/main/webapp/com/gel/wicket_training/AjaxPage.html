@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head></head>
+<body>
+<wicket:extend>
+    <h5>Ajax Page</h5>
+    <a href="#" wicket:id="levelOneNestingExample">Nesting Page Example</a>
+    <p>
+		    This page uses <em>org.apache.wicket.ajax.AjaxClientInfoBehavior</em>
+	        to collect the following information: <br /><br />
+		    ClientProperties: <span wicket:id="clientinfo">client info here</span>
+		</p>
+	
+		<p>
+			<span wicket:id="clienttime">client time info here</span>
+		</p>
+    
+ 
+ <table class="formTable" style="width:50%;">
+ 	<tr>
+ 		<td>Counter 1: <span wicket:id="c1"></span></td>
+ 		<td><a href="#" wicket:id="c1-link">increment</a> <a href="#" wicket:id="set-response-page">Reload The Page.</a></td>
+ 		<td>Ajax-only link.</td>
+ 	</tr>
+ 	<tr>
+ 		<td>Counter 2: <span wicket:id="c2"></span></td>
+ 		<td><a href="#" wicket:id="c2-link">increment</a></td>
+ 		<td>Ajax fallback link.</td>
+ 	</tr>
+ 	<tr>
+ 		<td>Counter 3: <span wicket:id="c3"></span></td>
+ 		<td><a href="#" wicket:id="c3-link">increment</a></td>
+ 		<td>Ajax link with a busy indicator.</td>
+ 	</tr>
+ </table>   
+ <br />
+ <table class="formTable" style="width:50%;">
+ 	<tr>
+ 		<td><a href="#" wicket:id="success-link">Success</a> </td>
+ 		<td>Will trigger the onsuccess javascript</td>
+ 	</tr>
+ 	<tr>
+ 		<td><a href="#" wicket:id="failure-link">Failure</a> </td>
+ 		<td>Will trigger the onfailure javascript</td>
+ 	</tr>
+ 	
+ 	<tr>
+ 		<td><a href="#" wicket:id="exception">exception</a></td>
+ 		<td>Test exception handling</td>
+ 	</tr>
+ </table>
+ <br /> <br />   
+    <wicket:child>
+    
+    </wicket:child>
+</wicket:extend>
+</body>
+</html>

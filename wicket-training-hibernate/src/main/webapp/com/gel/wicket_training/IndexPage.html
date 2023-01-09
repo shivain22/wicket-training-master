@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Apache Wicket Quickstart</title>
+		<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+		
+	</head>
+<body>
+<div id="hd">
+    <a href="#" wicket:id="basicCrudPage"><span style="color: white;"><b>Basic CRUD</b></span></a> &nbsp;
+    <span style="color: white;"><b>|</b></span>&nbsp;
+    <a href="#" wicket:id="ajaxPage"><span style="color: white;"><b>Ajax</b></span></a>
+    <span style="color: white;"><b>|</b></span>&nbsp;
+    <a href="#" wicket:id="ajaxFormInTabbedPanel"><span style="color: white;"><b>Ajax Form</b></span></a>
+    <span style="color: white;"><b>|</b></span>&nbsp;
+    <a href="#" wicket:id="dataTablePage"><span style="color: white;"><b>Data Table</b></span></a>
+    <span style="color: white;"><b>|</b></span>&nbsp;
+    <a href="#" wicket:id="simpleDataTablePage"><span style="color: white;"><b>Simple Data Table</b></span></a>
+    <span style="color: white;"><b>|</b></span>&nbsp;
+    <a href="#" wicket:id="dataViewPanelPage"><span style="color: white;"><b>Data View Panel</b></span></a>
+    
+</div>
+<div id="bd">
+<wicket:container wicket:id="hello"></wicket:container>
+<wicket:child>
+Example for &lt; wicket:child &gt; component
+Content which is available between &lt; wicket:extend &gt; from other pages will be showing here....
+</wicket:child>
+</div>
+<div id="ft">
+	<span wicket:id="footer"></span>
+</div>
+</body>
+</html>
