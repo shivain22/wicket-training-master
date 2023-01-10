@@ -2,6 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
 <wicket:panel>
 <br/>
-Mobile Number Panel
+Mobile Number
+<form wicket:id="tabMobileNumberAddForm">
+		<table>
+			<tr>
+				<td><span wicket:id="lblMobileNumber"></span></td>
+				<td><input type="text" wicket:id="txtMobileNumber" /></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+			<td><input type="submit" wicket:id="btnGoToPersonDetail"
+					value="Previous" /></td>
+				<td><input type="submit" wicket:id="btnGoToEmail"
+					value="Next" /></td>
+					
+					
+			</tr>
+		</table>
+	</form>
 </wicket:panel>
 </html>
