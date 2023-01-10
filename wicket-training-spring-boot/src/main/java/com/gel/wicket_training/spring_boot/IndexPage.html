@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Apache Wicket Quickstart</title>
+		<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+		
+	</head>
+<body>
+<div id="hd">
+    <a href="#" wicket:id="homePage"><span style="color: white;"><b>Home</b></span></a> &nbsp;
+    <span style="color: white;"><b>|</b></span>&nbsp;
+</div>
+<div id="bd">
+<wicket:container wicket:id="hello"></wicket:container>
+<wicket:child>
+Example for &lt; wicket:child &gt; component
+Content which is available between &lt; wicket:extend &gt; from other pages will be showing here....
+</wicket:child>
+</div>
+<div id="ft">
+	<span wicket:id="footer"></span>
+</div>
+</body>
+</html>

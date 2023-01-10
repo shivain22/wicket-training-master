@@ -9,18 +9,13 @@ import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 
 
-
-public  class HomePage extends WebPage {
+@WicketHomePage
+public  class IndexPage extends WebPage {
 
     
 
-	public HomePage() {
-		add(new BookmarkablePageLink("basicCrudPage", BasicCrudPage.class));
-		add(new BookmarkablePageLink("ajaxPage", AjaxPage.class));
-		add(new BookmarkablePageLink("ajaxFormInTabbedPanel", AjaxFormInTabbedPanel.class));
-		add(new BookmarkablePageLink("dataTablePage", DataTablePage.class));
-		add(new BookmarkablePageLink("simpleDataTablePage", SimpleDataTablePage.class));
-		add(new BookmarkablePageLink("dataViewPanelPage", DataViewPanelPage.class));
+	public IndexPage() {
+		add(new BookmarkablePageLink("homePage", HomePage.class));
 		add(new Label("footer", "This is the footer"));
 		add(new Label("hello","Apache Wicket Training"));
 	}

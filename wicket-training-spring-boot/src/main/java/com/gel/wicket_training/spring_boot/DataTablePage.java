@@ -1,6 +1,9 @@
-package com.gel.wicket_training;
+package com.gel.wicket_training.spring_boot;
 
-import com.gel.wicket_training.entities.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.wicket.extensions.ajax.markup.html.repeater.data.table.AjaxFallbackDefaultDataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.grid.ICellPopulator;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.AbstractColumn;
@@ -9,20 +12,26 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.LambdaColumn
 import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColumn;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterForm;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.filter.FilterToolbar;
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.ResourceModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.gel.wicket_training.spring_boot.entities.Person;
+import com.gel.wicket_training.spring_boot.entities.PersonAddress;
+import com.gel.wicket_training.spring_boot.entities.PersonBankAccount;
+import com.gel.wicket_training.spring_boot.entities.PersonEmail;
+import com.gel.wicket_training.spring_boot.entities.PersonMobileNumber;
 
 
-public class DataTablePage extends IndexPage
+
+public class DataTablePage extends WebPage
 {
+    private Person selected;
 	public DataTablePage()
 	{
 		List<IColumn<Person, String>> columns = new ArrayList<>();
@@ -128,4 +137,43 @@ public class DataTablePage extends IndexPage
 	        add(new PersonBankAccountList("bankAccounts",pbas));
 	    }
 	}
+
+    class ActionPanel extends Panel
+    {
+        public ActionPanel(String id, IModel<Person> model)
+        {
+            super(id, model);
+            add(new NormalEditLink("editPerson", getSelected())
+            {
+                @Override
+                public void onClick()
+                {
+                    selected = (Person)getParent().getDefaultModelObject();
+                    PageParameters pp = new PageParameters();
+                    pp.add("person_id", selected.getId());
+                    setResponsePage(BasicCrudPage.class,pp);
+                }
+            });
+            add(new NormalDeleteLink("deletePerson", getSelected())
+            {
+                @Override
+                public void onClick()
+                {
+                    selected = (Person)getParent().getDefaultModelObject();
+                    person = personRepository.findById(selected.getId()).get();
+                    personRepository.delete(person);
+                }
+            });
+        }
+    }
+    public Person getSelected()
+    {
+        return selected;
+    }
+
+    public void setSelected(Person selected)
+    {
+        addStateChange();
+        this.selected = selected;
+    }
 }

@@ -1,2 +1,53 @@
 server:
   port : 9191
+spring:
+  datasource:
+    driverClassName: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3305/wicket_training?useSSL=false
+    username: root
+    password:
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+wicket:
+  core:
+    settings:
+      general:
+        configuration-type: development
+      debug:
+        enabled: true
+        component-use-check: true
+        development-utilities-enabled: true
+  stuff:
+    htmlcompressor:
+      enabled: false
+      features:
+        removeComments: false
+        removeMultiSpaces: false
+        removeIntertagSpaces: false
+        removeQuotes: false
+        compressJavaScript: false
+        compressCss: false
+        simpleDoctype: false
+        removeScriptAttributes: false
+        removeStyleAttributes: false
+        removeLinkAttributes: false
+        removeFormAttributes: false
+        removeInputAttributes: false
+        simpleBooleanAttributes: false
+        removeJavaScriptProtocol: false
+        removeHttpProtocol: false
+        removeHttpsProtocol: false
+        preserveLineBreaks: false
+  external:
+    development:
+      devutils:
+        statelesschecker:
+          enabled: true
+        interceptor:
+          enable-live-sessions-page: true
+        diskstorebrowser:
+          enabled: true
+      wicketsource:
+        enabled: true

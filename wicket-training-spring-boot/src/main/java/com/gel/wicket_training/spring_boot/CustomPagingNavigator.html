@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head></head>
+<body>
+<wicket:panel>
+<div>
+
+        <div>
+            Items per page:
+        <span wicket:id="itemsPerPage">
+            <a wicket:id="itemPerPageLink"><span wicket:id="itemsValue"></span></a>
+        </span>
+        </div>
+        <div wicket:id="pagingLinksContainer">
+            <table>
+ 
+                <tbody>
+                <tr valign="top">
+                    <td>
+                        <a wicket:id="first" href="">
+                            <span>&lt;&lt;</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a wicket:id="prev"  href="">
+                            <span>&lt;</span>
+                        </a>
+                    </td>
+                    <td wicket:id="navigation">
+                        <a wicket:id="pageLink"><span
+                                wicket:id="pageNumber">5</span></a>
+                    </td>
+ 
+                    <td>
+                        <a wicket:id="next" href="#">
+                            <span>&gt;</span></a>
+                    </td>
+                    <td>
+                        <a wicket:id="last" href="#">
+                            <span>&gt;&gt;</span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+ 
+        </div>
+    </div>
+    </wicket:panel>
+</body>
+</html>
