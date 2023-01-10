@@ -2,6 +2,8 @@ package com.gel.wicket_training.spring_boot.entities;
 
 import org.apache.wicket.model.IModel;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -11,6 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table
+@Data
 public class Person implements Serializable,IModel<Person>  {
 	
 	public Person() {
@@ -44,61 +47,7 @@ public class Person implements Serializable,IModel<Person>  {
 	private Set<PersonBankAccount> personBankAccounts = new HashSet<PersonBankAccount>(10);
 	
 
-	public Long getId() {
-		return id;
-	}
-
-	public Set<PersonBankAccount> getPersonBankAccounts() {
-		return personBankAccounts;
-	}
-
-	public void setPersonBankAccounts(Set<PersonBankAccount> personBankAccounts) {
-		this.personBankAccounts = personBankAccounts;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Set<PersonMobileNumber> getPersonMobileNumbers() {
-		return personMobileNumbers;
-	}
-
-	public void setPersonMobileNumbers(Set<PersonMobileNumber> personMobileNumbers) {
-		this.personMobileNumbers = personMobileNumbers;
-	}
-
-	public Set<PersonEmail> getPersonEmails() {
-		return personEmails;
-	}
-
-	public void setPersonEmails(Set<PersonEmail> personEmails) {
-		this.personEmails = personEmails;
-	}
-
-	public Set<PersonAddress> getPersonAddresses() {
-		return personAddresses;
-	}
-
-	public void setPersonAddresses(Set<PersonAddress> personAddresses) {
-		this.personAddresses = personAddresses;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+	
 	
 	public boolean addPersonMobileNumber(PersonMobileNumber personMobileNumber) {
 		if(this.personMobileNumbers!=null) {

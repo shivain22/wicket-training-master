@@ -10,7 +10,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
-public class AjaxFormInTabbedPanel extends WebPage
+public class AjaxFormInTabbedPanel extends HomePage
 {
 	/**
 	 * Constructor

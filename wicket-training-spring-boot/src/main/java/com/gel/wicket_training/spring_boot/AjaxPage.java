@@ -36,7 +36,7 @@ import com.gel.wicket_training.spring_boot.entities.Person;
 
 
 
-public class AjaxPage extends WebPage {
+public class AjaxPage extends HomePage {
 	private int counter1 = 0;
 	private int counter2 = 0;
 	private int counter3 = 0;

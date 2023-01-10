@@ -10,8 +10,11 @@ import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvid
 import org.apache.wicket.injection.Injector;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.springframework.data.domain.Pageable;
 
 import com.gel.wicket_training.spring_boot.entities.Person;
+import com.gel.wicket_training.spring_boot.query.common.SearchRequest;
+import com.gel.wicket_training.spring_boot.query.common.SearchSpecification;
 import com.gel.wicket_training.spring_boot.repositories.IPersonRepository;
 
 
@@ -28,6 +31,10 @@ public class SortablePersonDataProvider extends SortableDataProvider<Person, Str
 	public SortablePersonDataProvider()
 	{
 		Injector.get().inject(this);
+		SearchRequest request = new SearchRequest();
+		SearchSpecification<Person> specification = new SearchSpecification<>(request);
+        Pageable pageable = SearchSpecification.getPageable(request.getPage(), request.getSize());
+        personRepository.findAll(specification, pageable);
 		setSort("firstName", SortOrder.ASCENDING);
 		this.totalRows =(int) personRepository.count();
 	}
