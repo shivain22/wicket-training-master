@@ -29,7 +29,7 @@ import com.gel.wicket_training.spring_boot.entities.PersonMobileNumber;
 
 
 
-public class DataTablePage extends WebPage
+public class DataTablePage extends HomePage
 {
     private Person selected;
 	public DataTablePage()

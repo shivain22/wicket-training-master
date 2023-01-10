@@ -10,4 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface IPersonRepository extends JpaRepository<Person,Long> {
 
 
+	Person findByFirstNameAndLastName(String firstName,String lastName);
 }
